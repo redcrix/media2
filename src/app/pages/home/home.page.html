@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-toolbar color="primary" class="animated fadeIn">
+    <ion-buttons slot="start">
+      <ion-menu-button style="color:white"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-text color="light">
+        <!-- [placeholder]="translate.get('userlist.search')" -->
+        <!-- {{ 'app.name' | translate }} -->
+        Home
+        <ion-text color="secondary" class="fw700"> </ion-text>
+      </ion-text>
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button icon-left size="large" shape="round" color="tertiary" (click)="logout()">
+        <ion-icon style="font-size: 25px" name="log-out"></ion-icon>
+      </ion-button>
+      <!-- <ion-button icon-left size="small" shape="round" color="tertiary" (click)="editprofile()">
+        <ion-icon name="contact"></ion-icon>
+      </ion-button> -->
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <h1 style="text-align: center">{{timer}}</h1>
+  <br>
+  <!-- <ion-card class="empdata"> -->
+  <div style="text-align: center;font-size: 25px;line-height: 0;
+    font-family: Gotham; font-weight: bold">
+    Employee Data
+    <hr style="width: 75%;
+      color: black;
+      border-width: 2px;">
+  </div>
+ 
+          <ion-item >
+              <ion-label> ID :</ion-label>
+               <p> {{emp_id}}</p>
+            </ion-item>
+            <ion-item style="margin: 10px 0 13px 0;">
+                <ion-label> Name :</ion-label>
+                 <p>{{name1}}</p>
+              </ion-item>
+              <ion-item style="margin: 10px 0 13px 0;">
+                  <ion-label style="font-size: 13px;"> Designation :</ion-label>
+                   <p style="font-size: 13px;"> {{name3}}</p>
+                   <!-- {{helper.getORG_NAME()}} -->
+                </ion-item>
+                <ion-item style="margin: 10px 0 13px 0;">
+                    <ion-label> Department : </ion-label>
+                     <p> {{name2}}</p>
+                    <!-- {{helper.getDepartmentName() }} -->
+                  </ion-item>
+                  <ion-item style="margin: 10px 0 13px 0;">
+                      <ion-label> Today’s shift  :</ion-label>
+                       <p> {{from_date  | slice: 11:16 }}  <span style="color:black">To</span> {{to_date | slice: 11:16 }}</p>
+                       <!-- {{TTListModel1.float_FROM_DATE_TIME| date:'HH:mm'}} To  {{TTListModel[0].float_TO_DATE_TIME| date:'HH:mm'}} -->
+                      </ion-item>
+                    
+                    <ion-item style="margin: 10px 0 13px 0;">
+                      <ion-label> Your next shift on  :</ion-label>
+                      <p *ngIf="to_date1"> {{tt_date | slice: 0:10}} {{from_date1 | slice: 11:16 }}  <span style="color:black">To</span> {{to_date1  | slice: 11:16 }}</p>
+                      <p *ngIf="!to_date1">No Data Available.</p>
+                     
+                        <!-- <p>  {{TTListModel2.TT_DATE | date:'dd/MM/yyyy'}}<span style="color:black">From </span>{{TTListModel[1].float_FROM_DATE_TIME| date:'HH:mm'}} <span style="color:black">To</span>  {{TTListModel[1].float_TO_DATE_TIME| date:'HH:mm'}}</p> -->
+                      </ion-item>
+                    <!--  -->
+  <ion-grid>
+    <ion-row style="margin: auto;">
+      <ion-col size="6">
+        <button (click)="presentAlertRequests()" expand="full" style="
+        background: rgb(49, 21, 111);
+    border-radius: 4px;color: white;
+    height: 40px;
+    font-size: 21px;
+    width: 100%;">Request</button>
+      </ion-col>
+      <ion-col size="6">
+        <button (click)="presentAlertView()" expand="full" style="
+          background: rgb(49, 21, 111);
+      border-radius: 4px;
+      font-size: 21px;
+      height: 40px;color: white;
+      width: 100%;">View</button>
+
+
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

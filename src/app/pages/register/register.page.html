@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar color="primary" class="animated fadeIn">
+    <ion-buttons slot="start" (click)="Back()">
+      <ion-icon ios="ios-arrow-back" md="md-arrow-back" class="backIcon"></ion-icon>
+    </ion-buttons>
+
+
+  </ion-toolbar>
+</ion-header>
+<ion-content class="content">
+
+    <div class="bgnd2" style="height:100%">
+    <br><br><br>
+    <div class="logo" style="height: 180px;margin: auto;text-align: center;">
+      <img src="assets/img/ionbooking-ico.png">
+    </div>
+    <div padding-horizontal text-center class="animated fadeInDown">
+      <form (submit)="signUp()">
+        <ion-item style="margin-bottom: 10px;" no-padding class="inputstyle animated fadeInUp">
+          <ion-label class="wcLabel">
+            <h3>
+              <ion-icon name="mail" item-start></ion-icon>
+            </h3>
+          </ion-label>
+          <ion-input placeholder="Employee ID" type="email" [(ngModel)]="usr.emp_id" name="usr.emp_id"></ion-input>
+        </ion-item>
+        <ion-item style="margin-bottom: 10px;" no-padding class="inputstyle animated fadeInUp">
+          <ion-label class="wcLabel">
+            <h3>
+              <ion-icon name="lock" item-start></ion-icon>
+            </h3>
+          </ion-label>
+          <ion-input placeholder="password" type="password" [(ngModel)]="usr.emp_pwd" name="usr.emp_pwd"></ion-input>
+        </ion-item>
+        <ion-item style="margin-bottom: 10px;" no-padding class="inputstyle animated fadeInUp">
+          <ion-label class="wcLabel">
+            <h3>
+              <ion-icon name="lock" item-start></ion-icon>
+            </h3>
+          </ion-label>
+          <ion-input placeholder="Confirm password" type="password" [(ngModel)]="passwordConfirm" name="passwordConfirm"></ion-input>
+        </ion-item>
+        <ion-button class="btnstyle2" full (click)="signUp()" icon-left size="medium" expand="full" color="dark"
+          tappable>
+          <ion-ripple-effect></ion-ripple-effect>
+          <ion-icon style="color:white" name="paper"></ion-icon>
+          Submit
+        </ion-button>
+      </form>
+    </div>
+
+  </div>
+</ion-content>

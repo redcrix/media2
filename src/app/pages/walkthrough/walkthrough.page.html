@@ -1,0 +1,18 @@
+<ion-content>
+  <div class="fullhe" dir="ltr" options="slideOpts">
+    <ion-slide class="bgnd2">
+      <div class="w100" padding>
+        <h2 class="slide-title text-white" margin-bottom></h2>
+        <hr>
+        <!--go Sign In / Sign Up -->
+        <button  [disabled]="! enableLogin" expand="full" color="secondary" class="btnstyle card" margin-top (click)="openLoginPage()">
+          Sign In / Sign Up
+        </button>
+        <!--go Settings -->
+        <button class="btnstyle2 card" expand="full" color="dark" margin-top (click)="settings()">
+          Settings
+        </button>
+      </div>
+    </ion-slide>
+  </div>
+</ion-content>

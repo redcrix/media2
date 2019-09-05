@@ -1,0 +1,106 @@
+
+  ion-icon{
+      color: white;
+      font-size: 15px;
+  }
+  ion-header{
+      background: #431e96;
+      color: white;
+  }
+  ion-title{
+      color: white;
+  }
+  .toolbar-title-md {
+      padding: 0 12px;
+      font-size: 2rem;
+      font-weight: 500;
+      color: #fff;
+  }
+  .itemdata{
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    color: black;
+    box-shadow: 1px 1px 1px #e0dfdf;
+  }
+  .bar-button-menutoggle-md ion-icon {
+      padding: 0 6px;
+      font-size: 3.2rem;
+  }
+  h1{
+      font-size: 50px !important;
+  }
+h2{
+  font-size: 25px !important;
+  // font-family: cursive;
+  color: #431e96;
+}
+ion-label{
+  font-size: 20px;
+  color: white;
+}
+ion-item{
+  border-radius: 5px;
+  font-size: 20px;
+  color: #431e96;
+}
+.keyname{
+  font-family: sans-serif;
+  font-size: 18px;
+  color: #431e96;
+  text-shadow: 4px 4px 3px rgba(224, 219, 219, 0.5);
+}
+.empdata{
+  border-radius: 20px 5px 20px 5px;
+  width: 100%;
+    padding: 0;
+    margin: 0;
+}
+.empinfo{
+  font-size: 18px;
+  font-family: -webkit-pictograph;
+}
+.emphead{
+  text-align: center;
+  background: #431e96;
+  color: white;
+  font-family: -webkit-pictograph;
+  font-size: 20px;
+}
+.empdate{
+  border-radius: 5px 20px 5px 20px;
+  text-align: center;
+  height: 125px;
+}
+  .ion-color-medium {
+      --ion-color-base: #fbfbfb !important;
+      --ion-color-base-rgb: var(--ion-color-medium-rgb, 152,154,162) !important;
+      --ion-color-contrast: var(--ion-color-medium-contrast, #fff) !important;
+      --ion-color-contrast-rgb: var(--ion-color-medium-contrast-rgb, 255,255,255) !important;
+      --ion-color-shade: #fff !important;}
+
+      
+      ion-label{
+        font-size: 15px !important;
+        color: #0c0b0b !important;
+      }
+
+      p {
+        font-size: 16px !important;
+       }
+
+       p {
+        font-family: Gotham;
+        font-weight: bold;
+    }
+
+    ion-label.sc-ion-label-ios-h.sc-ion-label-ios-s.hydrated {
+      font-family: Gotham;
+      font-weight: bold;
+  }
+
+  h1 {
+    font-family: Gotham;
+    font-weight: bold;
+}
+      
+

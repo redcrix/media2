@@ -1,0 +1,93 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      <ion-menu-button style="color:white"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Manual Adjustment Request</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content padding>
+  <form (submit)="submitAdjustment()">
+
+    <!-- [formGroup]="credentialsForm" -->
+
+
+    <ion-item>
+      <ion-label>Date</ion-label>
+      <ion-datetime max="2050" displayFormat="YYYY-MM-DD" [(ngModel)]="adj.punch_date" name="punch_date"></ion-datetime>
+    </ion-item>
+
+
+
+    <ion-item>
+      <ion-label>Time</ion-label>
+      <ion-datetime displayFormat="HH:mm" [(ngModel)]="adj.punch_time" name="punch_time"></ion-datetime>
+    </ion-item>
+
+    <ion-item class="item-leave-height">
+      <ion-label>Reader</ion-label>
+      <ion-select style="padding:7px;max-width: 80%;" interface="action-sheet" [(ngModel)]="adj.reader_id" name="reader_id">
+        <ion-select-option  *ngFor="let item of readerList;let idx = index" selected="{{(idx==0).toString()}}" value="{{item.READER_ID}}">{{item.READER_NAME}}</ion-select-option>
+      </ion-select>
+
+      
+    </ion-item>
+
+    <!-- <ion-item>
+      <select [(ngModel)]="adj.reader_id" id="reader_id">
+        <option value="" disabled selected>select a category</option>
+        <option *ngFor="let item of readerList" [value]="item.READER_ID">{{item.READER_NAME}}</option>
+      </select>
+    </ion-item> -->
+
+    <!-- style="max-width: 66%;" -->
+
+    <ion-item class="item-leave-height">
+      <ion-label>Reasons</ion-label>
+      <ion-select style="padding:7px;max-width: 76%;" interface="action-sheet" [(ngModel)]="adj.reason_id" name="reason_id">
+        <ion-select-option *ngFor="let item of resons;let idx = index" selected="{{(idx==0).toString()}}" value="{{item.reason_id}}">{{item.reason}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item class="item-leave-height">
+      <ion-label>Punch Type</ion-label>
+      <ion-select  [(ngModel)]="adj.Punch_type" name="Punch_type">
+        <ion-select-option  value="0">OUT</ion-select-option>
+        <ion-select-option selected value="1">IN</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+
+    <!-- [formControl]="credentialsForm.controls['email']" -->
+    <div>
+      <ion-label fixed>Notes : </ion-label>
+      <ion-textarea style="border: 1px solid #d9d9d9;border-radius: 4px"  type="text" [(ngModel)]="adj.req_note" name="req_note"></ion-textarea>
+
+    </div>
+    <!-- <div *ngIf="!credentialsForm.controls.email.valid" class="validator-error">
+      <p style="color:red">Please enter a valid email.</p>
+    </div> -->
+
+    <!-- [disabled]="!credentialsForm.valid" -->
+    <ion-button style=" border-radius: 4px;
+  width: 100%;
+  color: white;
+  font-family: sans-serif;
+  font-size: 15px;
+  height: 40px;"   full (click)="submitAdjustment()" icon-left size="medium" expand="full" color="dark"
+      tappable>
+      <ion-ripple-effect></ion-ripple-effect>
+      <ion-icon name="paper"></ion-icon>
+      Submit
+    </ion-button>
+
+    <!-- <div padding>
+      <button ion-button round color="primary" block>submit</button>
+    </div> -->
+
+
+  </form>
+</ion-content>

@@ -1,0 +1,25 @@
+page-time-table {
+.ion-color-medium {
+    --ion-color-base: #ffffff !important;
+}
+.button-round{
+    border-radius:3px !important;
+    box-shadow: 0px 7px 10px #eee;
+    height: 40px;
+    box-shadow: 0px 7px 10px #a9a9a9;
+}
+.btnstyle2{
+    border-radius: 4px;
+    width: 100%;
+    background: #250d5b;
+    color: white;
+    font-family: sans-serif;
+    font-size: 15px;
+    height: 40px;
+  }
+  .itemdata{
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    box-shadow: 1px 1px 1px #e0dfdf;
+  }
+}

@@ -1,0 +1,61 @@
+:host {
+    ion-content {
+      //--background: linear-gradient(-135deg, var(--ion-color-medium), var(--ion-color-light))
+      --background: linear-gradient(-135deg, #ffffff, #ffffff)
+    }
+  }
+  .itemdata{
+    border: 1px solid #ffffff;
+    border-radius: 4px;
+    box-shadow: 1px 1px 1px #e0dfdf;
+  }
+  p{
+    text-transform: capitalize;
+  }
+  // .dashtab{
+  //   // background: #3c1a87;
+  //   // color: white;
+  //   // border-radius: 4px;
+  //   // padding: 5px;
+  //   // height: 33px;
+  // }
+
+  .current.mat-headline {
+    font-size: 10px;
+}
+  .round-progressbar {
+    display: initial !important;
+    margin: 10px 5px;
+    padding: 10px;
+    background-color:white;
+    
+    & .header {
+       text-align: center;
+       color:white;
+    }
+    & .roundholder{
+       position: absolute;
+       
+       & .current{
+           position: relative;
+       }
+    }
+   .progress-wrapper {
+       position: relative;
+       margin: 20px auto;
+   }
+
+   .current {
+       position: absolute;
+       font-weight: 100;
+       line-height: 1;
+       font-size: 32px;
+       color: white;
+   }
+
+   round-progress {
+     margin: auto;
+   }
+}
+
+  

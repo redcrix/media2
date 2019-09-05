@@ -1,0 +1,59 @@
+<!-- chrome://inspect/#devices -->
+<ion-content >
+  <div class="bgnd2" style="height:100%">
+    <br><br><br><br>
+          <div class="logo" style="height: 200px;margin: auto;margin-top: 15px;text-align: center;">
+              <img src="assets/img/ionbooking-ico.png">
+            </div>
+    <div class="w100">
+      <div padding-horizontal text-center class="animated fadeInDown">
+        <h4 no-margin>
+          <ion-text color="light">
+         </ion-text>
+        </h4>
+        <form (submit)="doLogin()" class="list-form ">
+          <ion-item style="margin-bottom: 10px;" no-padding class="inputstyle animated fadeInUp">
+            <ion-label class="wcLabel">
+              <p>
+                <ion-icon name="mail" item-start></ion-icon>
+              </p>
+            </ion-label>
+            <ion-input placeholder="Employee ID"  type="email" [(ngModel)]="account.empId" name="empId"></ion-input>
+          </ion-item>
+          
+          <ion-item style="margin-bottom:2px;" no-padding class="inputstyle animated fadeInUp">
+            <ion-label class="wcLabel">
+              <p>
+                <ion-icon name="lock" item-start></ion-icon>
+              </p>
+
+            </ion-label>
+
+            <ion-input placeholder="Password"  type="password" [(ngModel)]="account.password" name="password"></ion-input>
+          </ion-item>
+          <div>
+            <ion-grid>
+              <ion-row>
+                <ion-col col-12>
+                  <!-- <ion-button expand="full" full type="submit" icon-left size="medium" expand="" shape="round" color="dark" tappable> -->
+                  <button expand="full" full type="submit" icon-left size="medium" expand="full" class="btnstyle2"
+                    color="dark" tappable>
+                    <!-- <ion-icon name="log-in"></ion-icon> -->
+                    Login
+                  </button>
+                </ion-col>
+
+              </ion-row>
+              <ion-row style="text-align: right;
+              margin-top: 10px;">
+                <ion-col col-12>
+                <a  (click)="goToRegister()" class="registerlink">Register New Employee</a>
+               </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+        </form>
+      </div>
+    </div>
+</div>
+</ion-content>

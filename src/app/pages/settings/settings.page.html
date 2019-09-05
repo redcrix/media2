@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>App Settings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (submit)="saveSettings()">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-label style="font-family: sans-serif;">iVision Mobile Service URL :</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-input style="border: 1px solid;color:black;
+            border-radius: 4px;" [(ngModel)]="settingItem.mainurl" name="mainurl"></ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-button full (click)="saveSettings()" icon-left size="medium" expand="full" class="btnstyle2" color="dark" tappable>
+      <ion-ripple-effect></ion-ripple-effect>
+        <ion-icon style="color:white" name="save"></ion-icon>
+        Save
+    </ion-button>
+  </form>
+</ion-content>

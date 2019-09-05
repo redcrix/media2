@@ -1,0 +1,23 @@
+:host {
+  ion-content {
+    //--background: linear-gradient(-135deg, var(--ion-color-medium), var(--ion-color-light))
+    --background: linear-gradient(-135deg, #ffffff, #ffffff)
+  }
+  
+}
+*{
+  font-family: sans-serif;
+}
+ion-avatar {
+    width: 68px;
+    height: 68px;
+}
+.btnstyle2{
+  border-radius: 4px;
+  width: 95%;
+  margin: auto;
+  color: white;
+  font-family: sans-serif;
+  font-size: 15px;
+  height: 40px;
+}

@@ -1,0 +1,78 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>Geo Punching</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      <ion-menu-button style="color:white"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Geo Punching</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+<!-- [styles]="agmStyles" -->
+<ion-content padding>
+  <ion-card-content no-padding>
+    <agm-map [ngStyle]="GetMapStyle()" [latitude]="MyLocation.Latitude" [longitude]="MyLocation.Longitude" [zoom]="12"
+      [zoomControl]="false" [streetViewControl]="true">
+      <agm-marker [latitude]="MyLocation.Latitude" [longitude]="MyLocation.Longitude"></agm-marker>
+    </agm-map>
+
+    <!-- *ngIf="enablePunchingButtons" -->
+    <ion-grid>
+      <ion-row>
+        <ion-col>Country Code</ion-col>
+        <ion-col>{{MyAddress.countryCode}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>Country Name</ion-col>
+        <ion-col>{{MyAddress.countryName}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>Administrative Area</ion-col>
+        <ion-col>{{MyAddress.administrativeArea}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>Sub Administrative Area</ion-col>
+        <ion-col>{{MyAddress.subAdministrativeArea}}</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>Locality</ion-col>
+        <ion-col>{{MyAddress.locality}}</ion-col>
+      </ion-row>
+
+
+
+
+      <ion-row>
+
+        <!-- <button (click)="geooo()">geo</button> -->
+        <ion-col>
+          <ion-button style=" border-radius: 4px;
+  width: 100%;
+  color: white;
+  font-family: sans-serif;
+  font-size: 15px;
+  height: 40px;" [disabled]="!enablePunchingButtons" expand="full"  color="success" (click)="punchIn()">Punch In</ion-button>
+        </ion-col>
+
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button style=" border-radius: 4px;
+  width: 100%;
+  color: white;
+  font-family: sans-serif;
+  font-size: 15px;
+  height: 40px;" [disabled]="!enablePunchingButtons" expand="full"  color="danger" (click)="punchOut()">Punch Out</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+  </ion-card-content>
+</ion-content>
