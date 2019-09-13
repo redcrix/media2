@@ -70,15 +70,27 @@
               <!-- {{lev.START_DATE | date:'EEEE'}} -->
              </strong> 
             
-            <strong  *ngIf="lev.END_DATE!='null'">To 
+            <strong  *ngIf="lev.END_DATE!='null'">To :
               <!-- {{lev.END_DATE | date:'EEEE'}} -->
+              11111111
               {{ momentjs(lev.END_DATE).format('dddd') }}
 
             </strong>
           </h2>
-          <h2 *ngIf="lev.LV_TITLE!='null' && lev.LV_TITLE!=''"><strong>Leave Title {{lev.LV_TITLE}}</strong></h2>
+          <h2 *ngIf="lev.LV_TITLE!='null' && lev.LV_TITLE!=''"><strong>Leave: {{lev.LV_TITLE}}</strong></h2>
           <h3>
-            <strong>From {{lev.START_TIME | date:DefaultTimeFormat}} To {{lev.END_TIME | date:DefaultTimeFormat}}</strong>
+            <strong  *ngIf="lev.START_DATE!='null'">  
+                <span class="Tx_" >From:</span>  
+                 {{ momentjs(lev.START_DATE).format('DD/MM/YYYY') }}
+            
+              </strong>
+              <strong  *ngIf="lev.END_DATE!='null'">
+               <span class="Tx_">To:</span>  
+                {{ momentjs(lev.END_DATE).format('DD/MM/YYYY') || 'n/a'}}
+              </strong>
+
+
+    
           </h3>
 
         <h3>

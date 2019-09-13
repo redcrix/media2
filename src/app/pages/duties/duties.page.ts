@@ -6,6 +6,8 @@ import { LeavesService } from '../../../Services/LeavesService';
 import { Heplers } from '../../../providers/Helper/Helpers';
 import { TranslateService } from '@ngx-translate/core';
 import { DutiesListModel } from '../../../models/DutiesListModel';
+import * as moment from 'moment-timezone';
+
 
 @Component({
   selector: 'app-duties',
@@ -13,7 +15,7 @@ import { DutiesListModel } from '../../../models/DutiesListModel';
   styleUrls: ['./duties.page.scss'],
 })
 export class DutiesPage implements OnInit {
-
+  momentjs: any = moment;
   DutiyList: DutiesListModel[];
  // dateComp: DateComponent = { from: new Date().toISOString().split('T')[0], to: new Date().toISOString() };
  dateComp: DateComponent = { from: new Date().toISOString().split('T')[0], to: new Date().toISOString().split('T')[0] };
@@ -28,9 +30,14 @@ export class DutiesPage implements OnInit {
 
 
   MapDutiesListTable(res: any) {
+
+    console.log('DEBUGGG==',res);
     //debugger;
     if (res.code == 0) {
       this.DutiyList = res.result as DutiesListModel[];
+
+      console.log('DEBUGGG=='+this.DutiyList);
+      console.log(JSON.stringify(this.DutiyList));
     }
     else {
       this.helper.ShowErrorMessage(res.code);

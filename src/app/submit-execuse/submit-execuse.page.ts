@@ -26,6 +26,9 @@ export class SubmitExecusePage implements OnInit {
     var localISOTime = (new Date(Date.now() - tzoffset)).toISOString().slice(0, -1);
     this.excModel.from_time=localISOTime;
     this.excModel.to_time=localISOTime;
+
+
+
     this.execuseForm = this.formBuilder.group({
       description: ['', Validators.required],
       execuseDate:['', Validators.required],
@@ -37,6 +40,8 @@ export class SubmitExecusePage implements OnInit {
 
   }
   submitExecuse() {
+
+    // console.log(JSON.stringify(this.excModel));
     // if(this.excModel.from_time>=this.excModel.to_time)
     // {
     //   this.helper.showMessage("From time must be less than to time","Error");
@@ -45,7 +50,12 @@ export class SubmitExecusePage implements OnInit {
       this.submited=true;
       if(this.execuseForm.valid)
       {
-        this.excService.RequestExecuse(this.excModel).subscribe((res: any) => {
+        let ft = this.excModel.from_time.slice(11,19);
+        let tt = this.excModel.to_time.slice(11,19);
+
+        console.log(tt);
+        console.log(ft);
+        this.excService.RequestExecuse(this.excModel,tt,ft ).subscribe((res: any) => {
 
           this.response = res;
           console.log(res);

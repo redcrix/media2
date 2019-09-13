@@ -45,7 +45,9 @@ export class ExecusesPage implements OnInit {
       if (res.code == 0) {
         //debugger;
         this.exList = res.result as ExecuseListModel[];
+
         console.log(this.exList);
+        console.log(JSON.stringify(this.exList));
       }
       else {
         this.helper.ShowErrorMessage(res.code);

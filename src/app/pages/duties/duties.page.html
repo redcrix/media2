@@ -75,21 +75,33 @@
 
         <h3>
           <ion-badge slot="start" color="warning" class="rooms">
-            <strong>From {{lev.START_DATE | date:DefaultDateFormat}}</strong>
+
+              <strong  *ngIf="lev.START_DATE!='null'">
+                  <span class="Tx_">From:</span>  
+   
+                   {{ momentjs(lev.START_DATE).format('ddd') || 'n/a' }},  {{ momentjs(lev.START_DATE).format('DD/MM/YYYY') || 'n/a'}}
+                 </strong>
+
           </ion-badge>
         </h3>
 
         <h3>
           <ion-badge slot="start" color="warning" class="rooms">
-            <strong>To {{lev.END_DATE | date:DefaultDateFormat}}</strong>
+              <strong  *ngIf="lev.END_DATE!='null'">
+                  <span class="Tx_">To:</span>  
+   
+                   {{ momentjs(lev.END_DATE).format('ddd') || 'n/a' }},  {{ momentjs(lev.END_DATE).format('DD/MM/YYYY') || 'n/a'}}
+                 </strong>
+
+        
           </ion-badge>
         </h3>
 
-        <h3>
+        <!-- <h3>
           <ion-badge slot="start" color="warning" class="rooms">
             <strong>Reason {{lev.REASON_TITLE}}</strong>
           </ion-badge>
-        </h3>
+        </h3> -->
 
 
 

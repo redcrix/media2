@@ -143,21 +143,21 @@ export class LoginPage implements OnInit {
 
             // Or to get a key/value pair
             this.storage.get('nameOne').then((val) => {
-              console.log('Your nameOne is', val);
+              // console.log('Your nameOne is', val);
             });
 
             this.storage.set('nameTwo', '1');
 
             // Or to get a key/value pair
             this.storage.get('nameTwo').then((val) => {
-              console.log('Your nameTwo is', val);
+              // console.log('Your nameTwo is', val);
             });
 
             this.storage.set('nameThree', '1');
 
             // Or to get a key/value pair
             this.storage.get('nameThree').then((val) => {
-              console.log('Your nameThree is', val);
+              // console.log('Your nameThree is', val);
             });
             // this.storage.set(this.Config.UserInformation, JSON.stringify(res as EmployeeModel))
             AppSettings.USERNAME = this.empResponse.EMP_NAME;
@@ -179,7 +179,7 @@ export class LoginPage implements OnInit {
 
 
         this.storage.set(this.Config.ConnectionParameter, JSON.stringify(this.Params));
-        console.log(res.result.AllowExcReq);
+        // console.log(res.result.AllowExcReq);
 
 
 
@@ -204,14 +204,9 @@ export class LoginPage implements OnInit {
         this.usrSer.GetRightAccess(empId, config.APIKEY,
           this.tokenReponse.result).subscribe((res: any) => {
 
-            console.log('RIGHT ACCESS DEBUG === '+JSON.stringify(res));
-
-
-
-
             AppSettings.permissions = res.result as AccessRightsModel
             //debugger;
-            console.log(res.result);
+            // console.log(res.result);
             this.storage.set('allowExcReq', res.result.AllowExcReq);
             this.storage.set('allowGeoPunch', res.result.AllowGeoPunch);
             this.storage.set('allowPunchReq', res.result.AllowPunchReq);
@@ -249,9 +244,9 @@ export class LoginPage implements OnInit {
         // this.storage.set('TestOne', this.account.empId);
         // this.storage.set('TestTwo', this.account.password);
 
-        // this.uniqueDeviceID.get()
-        // .then(data => {
-          this.usrSer.Login('4cc506b3-2a33-4f6a-98de-700f36438594', this.account.empId, this.account.password)
+        this.uniqueDeviceID.get()
+        .then(data => {
+          this.usrSer.Login(data, this.account.empId, this.account.password)
           .subscribe((res: any) => {
 
             let showErr = res.result;
@@ -283,7 +278,7 @@ export class LoginPage implements OnInit {
         // this.uniqueDeviceID.uuid
         // 4cc506b3-2a33-4f6a-98de-700f36438594
       
-        // });
+        });
 
 
       }

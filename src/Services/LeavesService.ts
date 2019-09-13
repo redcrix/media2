@@ -43,8 +43,12 @@ export class LeavesService {
 
     GetDutyList(from: Date, to: Date) {
         // debugger;
+
+        let empId =  JSON.parse(localStorage.getItem('empId'));
+        let ApiToken = localStorage.getItem('ApiToken');
+
         return this.api.callGet('/ivmtReader.dll/api/v52/ivmtReader/getleavelist',
-            'emp_id=' + this.parms.EmpId + '&leave_type=2&start_date=' + from + '&end_date=' + to + '&apikey=' + this.parms.ApiKey + '&fields=LV_ID,LV_TITLE,START_DATE,END_DATE,REASON_TITLE&sort=START_DATE&token=' + this.parms.ApiToken)
+            'emp_id=' + empId + '&leave_type=2&start_date=' + from + '&end_date=' + to + '&apikey=' + config.APIKEY + '&fields=LV_ID,LV_TITLE,START_DATE,END_DATE,REASON_TITLE&sort=START_DATE&token=' + ApiToken)
     }
 
 

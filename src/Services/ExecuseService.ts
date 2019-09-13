@@ -33,15 +33,22 @@ export class ExecuseService {
 
     GetExecuseList(from: Date, to: Date) {
         // debugger;
+
+
+        let empId =  JSON.parse(localStorage.getItem('empId'));
+        let ApiToken = localStorage.getItem('ApiToken');
+        
         return this.api.callGet('/ivmtReader.dll/api/v52/ivmtReader/getleavelist',
-            'emp_id=' + this.parms.EmpId + '&leave_type=1&start_date=' + from + '&end_date=' + to + '&apikey=' + this.parms.ApiKey + '&fields=LV_ID,LV_TITLE,START_DATE,END_DATE,REASON_TITLE,START_TIME,END_TIME&sort=START_DATE&token=' + this.parms.ApiToken)
+            'emp_id=' + empId + '&leave_type=1&start_date=' + from + '&end_date=' + to + '&apikey=' + config.APIKEY + '&fields=LV_ID,LV_TITLE,START_DATE,END_DATE,REASON_TITLE,START_TIME,END_TIME&sort=START_DATE&token=' + ApiToken)
     }
 
 
-    RequestExecuse(ExcModel: ExecuseModel) {
+    RequestExecuse(ExcModel: ExecuseModel, tt, ft) {
+console.log(ExcModel);
+        console.log(tt);
       
         return this.api.callGet('/ivmtTrans.dll/api/v52/ivmtTrans/requestexcuse',
-            'emp_id=' + this.parms.EmpId + '&pay_status=' + ExcModel.pay_status + '&excuse_date=' + ExcModel.excuse_date + '&from_time='+this.datepipe.transform(ExcModel.from_time, 'hh:mm:ss')+'&to_time='+this.datepipe.transform(ExcModel.to_time, 'hh:mm:ss')+'&apikey=' + this.parms.ApiKey + '&reason_id=' + ExcModel.reason_id + '&desc=' + ExcModel.desc + '&token=' + this.parms.ApiToken)
+            'emp_id=' + this.parms.EmpId + '&pay_status=' + ExcModel.pay_status + '&excuse_date=' + ExcModel.excuse_date + '&from_time='+ft+'&to_time='+tt+'&apikey=' + this.parms.ApiKey + '&reason_id=' + ExcModel.reason_id + '&desc=' + ExcModel.desc + '&token=' + this.parms.ApiToken)
     }
 
     GetReasonList() {

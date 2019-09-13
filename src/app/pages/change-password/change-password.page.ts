@@ -23,6 +23,8 @@ export class ChangePasswordPage implements OnInit {
     }
     else {
       this.usrService.ChangePassword(this.OldPassword, this.NewPassword).subscribe((res: any) => {
+
+        console.log(JSON.stringify(res));
         if (res.code == 0) {
           this.helper.showMessage("Password has been changed successfully", "Done");
         }
