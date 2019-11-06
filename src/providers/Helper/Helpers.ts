@@ -375,6 +375,13 @@ export class Heplers {
         let Dt = new Date();
         return this.datepipe.transform(Dt, 'yyyy-MM-dd');
     }
+    GetOldDate() {
+        let d = new Date();
+        var day = d.getDay(),
+            diff = d.getDate() - 39;
+            console.log("df"+diff);
+        return this.datepipe.transform(new Date(d.setDate(diff)), 'yyyy-MM-dd');
+    }
 
     GetCurrentTime() {
         let Dt = new Date();

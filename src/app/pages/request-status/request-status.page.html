@@ -60,7 +60,36 @@
   </ion-button> -->
 
   <div>
+
+
+
+  
+      <ion-item  tappable margin-bottom class="card itemdata" *ngFor="let att of markers">
+    
+
+        <div class="Sol">
+
+          <div class="one" [innerHtml]="att.lat"></div>
+        </div> 
+ 
+
+
+
+
+        <!-- <div *ngFor="att.lat | safeHtml">
+
+
+        </div> -->
+
+      </ion-item>
+      
+    <div class="" *ngIf="OldData">
+
+ 
     <ion-item  tappable margin-bottom class="card itemdata" *ngFor="let att of RequestList">
+
+
+   
 
         <div *ngIf="!RequestList?.length > 0">
             <p>No data found.</p>
@@ -114,28 +143,38 @@
 
         <h3 *ngIf="att.REQUEST_TYPE==0">
 
+            <ion-badge slot="start" color="warning" class="rooms">
+                <strong>{{helper.getPunchType(att.PUNCH_TYPE)}} requested on {{att.REQUEST_DATE}} from
+                    {{att.REQUEST_FROM_DATE   | slice:0:10 }} to {{att.REQUEST_TO_DATE  | slice:0:10}}</strong>
+                
+              </ion-badge>
+
           
-            <strong>{{helper.getPunchType(att.PUNCH_TYPE)}} requested on {{att.REQUEST_DATE}} from
-              {{att.REQUEST_FROM_DATE   | slice:0:10 }} to {{att.REQUEST_TO_DATE  | slice:0:10}}</strong>
-          
+       
         </h3>
 
 
-
+      
   
           <h3 *ngIf="att.REQUEST_TYPE==4">
   
-          
-              <strong>Days between {{att.REQUEST_FROM_DATE | slice:0:10 }} and {{att.REQUEST_TO_DATE   | slice:0:10}}. Request for  {{helper.GetRequestType(att.REQUEST_TYPE)}} for period {{att.REQUEST_FROM_TIME  | slice:10:18 }} and {{att.REQUEST_TO_TIME  | slice:10:18}}</strong>
+              <ion-badge slot="start" color="warning" class="rooms">
+                  <strong>Days between {{att.REQUEST_FROM_DATE | slice:0:10 }} and {{att.REQUEST_TO_DATE   | slice:0:10}}. Request for  {{helper.GetRequestType(att.REQUEST_TYPE)}} for period {{att.REQUEST_FROM_TIME  | slice:10:18 }} and {{att.REQUEST_TO_TIME  | slice:10:18}}</strong>
            
+                </ion-badge>
+             
           </h3>
 
           
           <h3 *ngIf="att.REQUEST_TYPE==3">
   
              
-                <strong>Days between {{att.REQUEST_FROM_DATE | slice:0:10 }} and {{att.REQUEST_TO_DATE  | slice:0:10}}. Request for {{helper.GetRequestType(att.REQUEST_TYPE)}} for period {{att.REQUEST_FROM_TIME  | slice:10:18 }} and {{att.REQUEST_TO_TIME  | slice:10:18}}</strong>
-              
+
+              <ion-badge slot="start" color="warning" class="rooms">
+                  <strong>Days between {{att.REQUEST_FROM_DATE | slice:0:10 }} and {{att.REQUEST_TO_DATE  | slice:0:10}}. Request for {{helper.GetRequestType(att.REQUEST_TYPE)}} for period {{att.REQUEST_FROM_TIME  | slice:10:18 }} and {{att.REQUEST_TO_TIME  | slice:10:18}}</strong>
+            
+                </ion-badge>
+               
             </h3>
 
           
@@ -143,6 +182,7 @@
 
       </ion-label>
     </ion-item>
+  </div>
   </div>
 
 

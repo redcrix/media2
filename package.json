@@ -124,9 +124,7 @@
       "cordova-plugin-geolocation": {},
       "cordova-plugin-nativegeocoder": {},
       "cordova-plugin-uniquedeviceid": {},
-      "cordova.plugins.diagnostic": {
-        "ANDROID_SUPPORT_VERSION": "28.+"
-      },
+      "cordova.plugins.diagnostic": {},
       "cordova-plugin-x-toast": {},
       "cordova-plugin-app-version": {},
       "cordova-android-support-gradle-release": {},

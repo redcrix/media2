@@ -32,8 +32,13 @@ export class AttendanceService {
 
 
   GetAttendance(FromDate: string, ToDate: string) {
+
+    let empId =  JSON.parse(localStorage.getItem('empId'));
+    let ApiToken = localStorage.getItem('ApiToken');
+
+
     return this.api.callGet('/ivmtReader.dll/api/v52/ivmtReader/getattendance',
-      'emp_id=' + this.parms.EmpId + '&apikey=' + this.parms.ApiKey + '&start_date=' + FromDate + '&end_date=' + ToDate + '&fields=AT_DATE,AT_ROW_OUT_EARLY,AT_ROW_BEGIN_LATE,AT_ID,FROM_DATE_TIME,AT_CALC_BEGIN_LATE,TO_DATE_TIME,AT_TOTAL_ABSENT,AT_TOTAL_GAP,CT_TITLE,AT_TOTAL_DUTY_OVERTIME,AT_TOTAL_WORK,AT_CALC_STATUS,AT_ROW_ABSENT,AT_TOTAL_OVERTIME,AT_TOTAL_WORK_DURATION,AT_TOTAL_BREAK&sort=AT_DATE desc&token=' + this.parms.ApiToken)
+      'emp_id=' + empId + '&apikey=' + config.APIKEY + '&start_date=' + FromDate + '&end_date=' + ToDate + '&fields=AT_DATE,AT_ROW_OUT_EARLY,AT_ROW_BEGIN_LATE,AT_ID,FROM_DATE_TIME,AT_CALC_BEGIN_LATE,TO_DATE_TIME,AT_TOTAL_ABSENT,AT_TOTAL_GAP,CT_TITLE,AT_TOTAL_DUTY_OVERTIME,AT_TOTAL_WORK,AT_CALC_STATUS,AT_ROW_ABSENT,AT_TOTAL_OVERTIME,AT_TOTAL_WORK_DURATION,AT_TOTAL_BREAK&sort=AT_DATE desc&token=' + ApiToken)
   }
 
   

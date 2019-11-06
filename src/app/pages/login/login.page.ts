@@ -239,14 +239,9 @@ export class LoginPage implements OnInit {
       this.presentLoading();
       if (this.account.empId != undefined || this.account.empId != "") {
 
-        // localStorage.setItem('nameThree', empDesFr);
-
-        // this.storage.set('TestOne', this.account.empId);
-        // this.storage.set('TestTwo', this.account.password);
-
-        this.uniqueDeviceID.get()
-        .then(data => {
-          this.usrSer.Login(data, this.account.empId, this.account.password)
+        // this.uniqueDeviceID.get()
+        // .then(data => {
+          this.usrSer.Login('4cc506b3-2a33-4f6a-98de-700f36438594', this.account.empId, this.account.password)
           .subscribe((res: any) => {
 
             let showErr = res.result;
@@ -266,17 +261,8 @@ export class LoginPage implements OnInit {
              this.helper.showMessage(showErr, 'Error');
 
             }
-          });
-        // }).catch(error => {
-        //   console.log(error.status);
-        // });
+          // });
 
-        // this.uniqueDeviceID.get()
-        // .then((uuid: any) => {
-        // 7a2323b6-5d94-e54e-3557-350963261398
-        // this.deviceId=uuid
-        // this.uniqueDeviceID.uuid
-        // 4cc506b3-2a33-4f6a-98de-700f36438594
       
         });
 

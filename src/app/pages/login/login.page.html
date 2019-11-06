@@ -11,7 +11,7 @@
           <ion-text color="light">
          </ion-text>
         </h4>
-        <form (submit)="doLogin()" class="list-form ">
+        <form  class="list-form ">
           <ion-item style="margin-bottom: 10px;" no-padding class="inputstyle animated fadeInUp">
             <ion-label class="wcLabel">
               <p>
@@ -37,7 +37,7 @@
                 <ion-col col-12>
                   <!-- <ion-button expand="full" full type="submit" icon-left size="medium" expand="" shape="round" color="dark" tappable> -->
                   <button expand="full" full type="submit" icon-left size="medium" expand="full" class="btnstyle2"
-                    color="dark" tappable>
+                    color="dark" (click)="doLogin()" >
                     <!-- <ion-icon name="log-in"></ion-icon> -->
                     Login
                   </button>

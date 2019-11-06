@@ -68,7 +68,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     IonicModule.forRoot(environment.config),
     AppRoutingModule,
     HttpModule,
-   
     HttpClientModule,
     ImagePageModule,
     LocationPageModule,

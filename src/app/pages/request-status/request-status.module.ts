@@ -6,6 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { RequestStatusPage } from './request-status.page';
+import { SafeHtmlPipe } from './../../safe-html.pipe';
 
 const routes: Routes = [
   {
@@ -20,7 +21,8 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     RouterModule.forChild(routes)
-  ],
-  declarations: [RequestStatusPage]
+  ],exports:[SafeHtmlPipe],
+
+  declarations: [RequestStatusPage,SafeHtmlPipe]
 })
 export class RequestStatusPageModule {}

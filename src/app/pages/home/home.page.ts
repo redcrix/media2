@@ -347,7 +347,7 @@ export class HomePage {
 
   logout() {
     this.storage.remove('checkLogin_router');  
-    
+    this.storage.remove('ConnPar'); 
     this.storage.remove('TestOne');  
     this.storage.remove('nameOne');  
     this.storage.remove('nameTwo');  

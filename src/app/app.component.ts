@@ -392,6 +392,8 @@ export class AppComponent {
     this.storage.remove(this.Myconfig.Username_Key);  
     this.storage.remove('checkLogin_router');  
     
+    
+    this.storage.remove('ConnPar');  
     this.storage.remove('TestOne');  
     this.storage.remove('nameOne');  
     this.storage.remove('nameTwo');  

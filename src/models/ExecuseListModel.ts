@@ -8,4 +8,5 @@ export class ExecuseListModel {
     PAY_STATUS:number;
     START_TIME:Date;
     END_TIME:Date;
+    float_START_TIME:string;
 }

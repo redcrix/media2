@@ -114,7 +114,7 @@
               <!-- <strong>
               {{att.TT_DATE | date:'EEEE'}}
             </strong> -->
-            <strong> {{ momentjs(att.TT_DATE).format('dddd') }},  {{ momentjs(att.AT_DATE).format('DD/MM/YYYY') }}</strong>
+            <strong> {{ momentjs(att.TT_DATE).format('dddd') }},  {{ momentjs(att.TT_DATE).format('DD/MM/YYYY') }}</strong>
     
           </h2>
             <!-- <h3> -->
@@ -192,21 +192,21 @@
             </h3> -->
             <h3>
               <ion-badge style="width: 170px" slot="start" color="secondary" class="rooms">
-                <strong style="float:left" *ngIf="helper.ToHoursString(att.AT_TOTAL_WORK_DURATION)!='-'">Reg.HRS {{helper.ToHoursString(att.AT_TOTAL_WORK_DURATION)}}</strong>
+                <strong style="float:left" *ngIf="helper.ToHoursString(att.AT_TOTAL_WORK_DURATION)!='-'">Reg.HRS: {{helper.ToHoursString(att.AT_TOTAL_WORK_DURATION)}}</strong>
                 <!-- <strong style="float:left" *ngIf="att.AT_TOTAL_WORK_DURATION==0">Reg.HRS 0</strong>               -->
               </ion-badge>
             </h3>
 
             <h3>
               <ion-badge style="width: 170px" slot="start" color="secondary" class="rooms">
-                <strong style="float:left" *ngIf="helper.ToHoursString(att.AT_TOTAL_WORK_DURATION) !='-' ">Worked Hours {{helper.ToHoursString(att.AT_TOTAL_WORK_DURATION)}}</strong>
+                <strong style="float:left" *ngIf="helper.ToHoursString(att.AT_TOTAL_WORK_DURATION) !='-' ">Worked Hours: {{helper.ToHoursString(att.AT_TOTAL_WORK_DURATION)}}</strong>
               </ion-badge>
             </h3>
 
 
             <h3>
               <ion-badge style="width: 170px" slot="start" color="secondary" class="rooms">
-                <strong style="float:left" *ngIf="helper.ToHoursString(att.AT_TOTAL_ABSENT)!='-'">Absent {{helper.ToHoursString(att.AT_TOTAL_ABSENT)}}</strong>
+                <strong style="float:left" *ngIf="helper.ToHoursString(att.AT_TOTAL_ABSENT)!='-'">Absent: {{helper.ToHoursString(att.AT_TOTAL_ABSENT)}}</strong>
               </ion-badge>
             </h3>
 

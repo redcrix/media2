@@ -52,7 +52,7 @@
 
 
   <div>
-    <ion-item color="medium" tappable margin-bottom *ngFor="let lev of DutiyList">
+    <ion-item  class="List_" tappable margin-bottom *ngFor="let lev of DutiyList">
       <ion-thumbnail slot="start">
         <!-- <img src="assets/img/vac.png"> -->
         <ion-grid>
@@ -68,13 +68,13 @@
           <!-- <strong>{{att.TT_DATE | date:'yyyy/MM/dd'}}</strong> -->
         </h2>
         <h3>
-          <ion-badge slot="start" color="warning" class="rooms">
-            <strong>Title {{lev.LV_TITLE}}</strong>
+          <ion-badge slot="start" color="secondry" class="rooms">
+            <strong>Title: {{lev.LV_TITLE}}</strong>
           </ion-badge>
         </h3>
 
         <h3>
-          <ion-badge slot="start" color="warning" class="rooms">
+          <ion-badge slot="start" color="secondry" class="rooms">
 
               <strong  *ngIf="lev.START_DATE!='null'">
                   <span class="Tx_">From:</span>  
@@ -86,7 +86,7 @@
         </h3>
 
         <h3>
-          <ion-badge slot="start" color="warning" class="rooms">
+          <ion-badge slot="start" color="secondry" class="rooms">
               <strong  *ngIf="lev.END_DATE!='null'">
                   <span class="Tx_">To:</span>  
    
@@ -107,8 +107,8 @@
 
         <h3>
 
-          <ion-badge slot="start" color="warning" class="rooms">
-            <strong>Leave ID {{lev.LV_ID}}</strong>
+          <ion-badge slot="start" color="secondry" class="rooms">
+            <strong>Leave ID: {{lev.LV_ID}}</strong>
           </ion-badge>
 
         </h3>

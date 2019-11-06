@@ -1,6 +1,6 @@
 import { AccessRightsModel } from '../../models/AccessRightsModel'; 
 export class AppSettings {
-    public static API_ENDPOINT='http://mobile.fahretail.com';
+    public static API_ENDPOINT='http://mobile.demo.ivisionmt.com';
     public static MAPS_API='';
     public static USERNAME='';
     public static DEPARTMENT='';

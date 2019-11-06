@@ -47,7 +47,7 @@ export class ExecusesPage implements OnInit {
         this.exList = res.result as ExecuseListModel[];
 
         console.log(this.exList);
-        console.log(JSON.stringify(this.exList));
+        // console.log('Timestamp = '+JSON.stringify(this.exList[0].START_TIME.getTime()));
       }
       else {
         this.helper.ShowErrorMessage(res.code);

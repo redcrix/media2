@@ -46,39 +46,26 @@ export class RegisterPage implements OnInit {
     console.log(this.passwordConfirm, this.usr.emp_pwd)
     if (this.passwordConfirm == this.usr.emp_pwd) {
       
-      // debugger;
-      // this.uniqueDeviceID.uuid;
-        // if(this.uniqueDeviceID.uuid) {
-  // 2 changes
+
   // '4cc506b3-2a33-4f6a-98de-700f36438594'
 
-  this.uniqueDeviceID.get()
-  .then(data => {
-    this.userService.RegisterUser(data, this.usr.emp_id, this.usr.emp_pwd).subscribe((res: any) => {
+  // this.uniqueDeviceID.get()
+  // .then(data => {
+    this.userService.RegisterUser('4cc506b3-2a33-4f6a-98de-700f36438594', this.usr.emp_id, this.usr.emp_pwd).subscribe((res: any) => {
       this.response = res;
-      // console.log('1===>'+JSON.stringify(res));
       if (this.response.code == 0) {
-
-        // console.log('2=====check response===='+JSON.stringify(res));
-        // this.helper.showMessage("The request has been submited successfully for device, Please wait for approval.", "Done");
         this.helper.showMessage(res.result , '');
         this.navCtrl.navigateRoot('login',false, {replaceUrl: true});
-
       }
       else {
-        // alert('Caatch ERROR===='+this.uniqueDeviceID.uuid);
         this.helper.showMessage(res.result , '');
-        this.navCtrl.navigateRoot('login',false, {replaceUrl: true});
+        // this.navCtrl.navigateRoot('login',false, {replaceUrl: true});
       }
     });
-  // }).catch(error => {
-  //   console.log(error.status);
-  });
+  // });
 
  
   }
-        // .catch((error: any) => console.log(error));
-    // }
     else {
       this.helper.showMessage("Passwords not matched", "Error");
     }

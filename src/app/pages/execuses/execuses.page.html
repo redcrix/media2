@@ -52,7 +52,7 @@
   </ion-button>
 
   
-    <ion-item color="medium" tappable margin-bottom *ngFor="let lev of exList">
+    <ion-item class="List_"   tappable margin-bottom *ngFor="let lev of exList">
       <ion-thumbnail slot="start">
         <!-- <img src="assets/img/vac.png"> -->
         <ion-grid>
@@ -64,40 +64,61 @@
         </ion-grid>
       </ion-thumbnail>
       <ion-label>
-          <h2> 
-             <strong>
-              {{ momentjs(lev.START_DATE).format('dddd') }}
-              <!-- {{lev.START_DATE | date:'EEEE'}} -->
-             </strong> 
-            
-            <strong  *ngIf="lev.END_DATE!='null'">To :
-              <!-- {{lev.END_DATE | date:'EEEE'}} -->
-              11111111
-              {{ momentjs(lev.END_DATE).format('dddd') }}
+    
+        
+          <h3 *ngIf="lev.LV_TITLE!='null' && lev.LV_TITLE!=''">
+              <ion-badge slot="start" color="secondry" class="rooms">
+                  <strong>Leave: {{lev.LV_TITLE}}</strong>
+                </ion-badge>
+              </h3>
+        
 
-            </strong>
-          </h2>
-          <h2 *ngIf="lev.LV_TITLE!='null' && lev.LV_TITLE!=''"><strong>Leave: {{lev.LV_TITLE}}</strong></h2>
           <h3>
+
+           <ion-badge slot="start" color="secondry" class="rooms">
+         
             <strong  *ngIf="lev.START_DATE!='null'">  
-                <span class="Tx_" >From:</span>  
+                <span class="Tx_" >Date:</span>  
                  {{ momentjs(lev.START_DATE).format('DD/MM/YYYY') }}
             
               </strong>
+
               <strong  *ngIf="lev.END_DATE!='null'">
-               <span class="Tx_">To:</span>  
-                {{ momentjs(lev.END_DATE).format('DD/MM/YYYY') || 'n/a'}}
-              </strong>
+                <span class="Tx_">-</span>  
+                 {{ momentjs(lev.END_DATE).format('DD/MM/YYYY') }}
+               </strong>
+
+            </ion-badge>
 
 
-    
-          </h3>
 
-        <h3>
-          <!-- <ion-badge slot="start" color="warning" class="rooms">
+            </h3>
+
          
-          </ion-badge> -->
-        </h3>
+
+          <h3>
+            <ion-badge slot="start" color="secondry" class="rooms">
+                <strong  *ngIf="lev.START_TIME!='null'">
+                 <span class="Tx_">From:</span>  
+    {{lev.START_TIME  | slice:11:16}}
+                </strong>
+            </ion-badge>
+            </h3>
+
+            <h3>
+              <ion-badge slot="start" color="secondry" class="rooms">
+                  <strong  *ngIf="lev.END_TIME!='null'">
+                   <span class="Tx_">To:</span>  
+           {{lev.END_TIME  | slice:11:16}}
+                 
+                  </strong>
+              </ion-badge>
+              </h3>
+
+          <strong></strong>
+               
+
+   
 
 
         <!-- <h3>
@@ -114,8 +135,8 @@
           </h3> -->
 
           <h3>
-              <ion-badge slot="start" color="warning" class="rooms">
-                <strong>{{lev.REASON_TITLE }}</strong>
+              <ion-badge slot="start" color="secondry" class="rooms">
+                <strong>Reason: {{lev.REASON_TITLE }}</strong>
               </ion-badge>
             </h3>
 

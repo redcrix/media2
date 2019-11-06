@@ -100,6 +100,8 @@ export class DashboardPage implements OnInit {
   MapAttendanceTable(res: any) {
   
     if(res.code==0){
+      console.log('datajj');
+      console.log(AttendanceModel);
     this.AttendanceTab = res.result as AttendanceModel[];
     }
     else {
@@ -123,8 +125,6 @@ export class DashboardPage implements OnInit {
     this.helpService.GetDateFormat().subscribe((res)=>{
       this.DefaultDateFormat=(res as any).result[0].Date_Format;
       AppSettings.ServerDateFormat=this.DefaultDateFormat;
-    
-
       this.storage.set("DateFormat",this.DefaultDateFormat);
     });
 
@@ -147,6 +147,7 @@ export class DashboardPage implements OnInit {
     ////debugger;
     this.TTListModel = res.result as TimeTableListModel[];
 
+
   }
 
 
@@ -160,15 +161,17 @@ export class DashboardPage implements OnInit {
   }
 
   GetAttendance() {
-    this.AttService.GetAttendance(this.helper.getWeekStart(new Date()),
-     this.helper.getWeekEnd(new Date())).subscribe(res => 
+    console.log(this.helper.GetCurrentDate());
+    this.AttService.GetAttendance(this.helper.GetOldDate(),
+    this.helper.GetCurrentDate()).subscribe(res => 
       {
         console.log("GetAttendance",res);
         this.MapAttendanceTable(res);
-      
         
       });
   }
+
+  
 
   TodayPunches() {
 

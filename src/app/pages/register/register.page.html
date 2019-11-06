@@ -15,7 +15,7 @@
       <img src="assets/img/ionbooking-ico.png">
     </div>
     <div padding-horizontal text-center class="animated fadeInDown">
-      <form (submit)="signUp()">
+      <form >
         <ion-item style="margin-bottom: 10px;" no-padding class="inputstyle animated fadeInUp">
           <ion-label class="wcLabel">
             <h3>
@@ -41,7 +41,7 @@
           <ion-input placeholder="Confirm password" type="password" [(ngModel)]="passwordConfirm" name="passwordConfirm"></ion-input>
         </ion-item>
         <ion-button class="btnstyle2" full (click)="signUp()" icon-left size="medium" expand="full" color="dark"
-          tappable>
+          >
           <ion-ripple-effect></ion-ripple-effect>
           <ion-icon style="color:white" name="paper"></ion-icon>
           Submit

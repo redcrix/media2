@@ -20,7 +20,7 @@
 
     <ion-item>
         <ion-label>Start Date</ion-label>
-        <ion-datetime max="2050-01-01" [formControl]="leaveForm.controls['StartDate']" displayFormat="YYYY-MM-DD" [(ngModel)]="leaveRequest.StartDate" name="StartDate"></ion-datetime>
+        <ion-datetime max="2050-01-01" [formControl]="leaveForm.controls['StartDate']" displayFormat="YYYY/MM/DD" [(ngModel)]="leaveRequest.StartDate" name="StartDate"></ion-datetime>
       </ion-item>
       <div *ngIf="!leaveForm.controls.StartDate.valid && submited" class="validator-error">
         <p style="color:red">Start Date field is required</p>
@@ -29,7 +29,7 @@
 
     <ion-item>
       <ion-label>End Date</ion-label>
-      <ion-datetime max="2050-01-01" [formControl]="leaveForm.controls['EndDate']" displayFormat="YYYY-MM-DD" [(ngModel)]="leaveRequest.EndDate" name="EndDate"></ion-datetime>
+      <ion-datetime max="2050-01-01" [formControl]="leaveForm.controls['EndDate']" displayFormat="YYYY/MM/DD" [(ngModel)]="leaveRequest.EndDate" name="EndDate"></ion-datetime>
     </ion-item>
     <div *ngIf="!leaveForm.controls.EndDate.valid && submited" class="validator-error">
       <p style="color:red">End Date field is required</p>
