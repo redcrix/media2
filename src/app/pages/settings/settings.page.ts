@@ -142,4 +142,8 @@ export class SettingsPage implements OnInit {
     console.log('Ng All Changes');
   }
 
+  Back(){
+    this.navCtrl.navigateRoot('/login');
+  }
+  
 }
