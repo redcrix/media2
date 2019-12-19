@@ -25,14 +25,14 @@ export class UserService {
         this.parms = JSON.parse(res) as ApiParameters;        
     }
 
-    ChangePassword(OldPassword:string,NewPassword:string) {
+    ChangePassword(OldPassword:string,NewPassword:string, empID:string) {
         // debugger;
 
         let empId =  JSON.parse(localStorage.getItem('empId'));
         let ApiToken = localStorage.getItem('ApiToken');
 
         return this.api.callGet('/ivmtTrans.dll/api/v52/ivmtTrans/ChangePassword',
-        'emp_id=' + empId+ '&apikey=' + config.APIKEY+ '&old_password='+OldPassword+'&new_password='+NewPassword+'&token=' + ApiToken)
+        'emp_id=' + empID+ '&apikey=' + config.APIKEY+ '&old_password='+OldPassword+'&new_password='+NewPassword+'&token=' + ApiToken)
     }
 
     RegisterUser(UUID:string,EMPID:string,PASSWORD:string) {

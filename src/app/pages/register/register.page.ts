@@ -51,7 +51,7 @@ export class RegisterPage implements OnInit {
 
   // this.uniqueDeviceID.get()
   // .then(data => {
-    this.userService.RegisterUser('4cc506b3-2a33-4f6a-98de-700f36438594', this.usr.emp_id, this.usr.emp_pwd).subscribe((res: any) => {
+    this.userService.RegisterUser('4cc506b3-2a33-4f6a-98de-700f36438597', this.usr.emp_id, this.usr.emp_pwd).subscribe((res: any) => {
       this.response = res;
       if (this.response.code == 0) {
         this.helper.showMessage(res.result , '');
@@ -78,4 +78,9 @@ export class RegisterPage implements OnInit {
   goToLogin() {
     this.navCtrl.navigateRoot('/login');
   }
+
+  goToSettings(){
+    this.navCtrl.navigateRoot('/settings');
+  }
+
 }

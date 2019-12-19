@@ -47,7 +47,7 @@
               </ion-label>
             </ion-item> -->
             <ion-item *ngIf="helper.HasPermission(p.pageName)" (click)="goToPage(p.url)" style="color: #fff;
-            background: #3d1a8a">
+            background: #133272">
               <ion-icon slot="start" [name]="p.icon"></ion-icon>
               <ion-label>
                 {{p.title}}
@@ -55,9 +55,21 @@
             </ion-item>
           </ion-menu-toggle>
 
-          <ion-menu-toggle auto-hide="false">
+
+          <!-- <ion-menu-toggle auto-hide="false" *ngIf="signUpBtn">
+              <ion-item  (click)="logout()" style="color: #fff;
+                background: #133272">
+                   <ion-icon ios="ios-log-out" md="md-log-out"></ion-icon>
+                  <ion-label>
+                    &nbsp; Sign out
+                  </ion-label>
+                </ion-item>
+            </ion-menu-toggle>  -->
+
+
+          <!-- <ion-menu-toggle auto-hide="false">
           <ion-item  (click)="testreqGeoPunch()" style="color: #fff;
-          background: #3d1a8a">
+          background: #133272">
              <ion-icon ios="ios-map" md="md-map"></ion-icon>
             <ion-label>
               &nbsp; Geo Punching
@@ -68,7 +80,7 @@
 
           <ion-menu-toggle auto-hide="false">
           <ion-item  (click)="testreqExcReq()" style="color: #fff;
-          background: #3d1a8a">
+          background: #133272">
              <ion-icon ios="ios-calendar" md="md-calendar"></ion-icon>
             <ion-label>
               &nbsp; Execuse Request
@@ -78,7 +90,7 @@
 
         <ion-menu-toggle auto-hide="false">
           <ion-item  (click)="testreqPunchReq()" style="color: #fff;
-          background: #3d1a8a">
+          background: #133272">
              <ion-icon ios="ios-clock" md="md-clock"></ion-icon>
             <ion-label>
               &nbsp; Manual Adjustment Request
@@ -88,7 +100,7 @@
 
         <ion-menu-toggle auto-hide="false">
           <ion-item  (click)="testreqVacReq()" style="color: #fff;
-          background: #3d1a8a" >
+          background: #133272" >
              <ion-icon ios="ios-paper" md="md-paper"></ion-icon>
             <ion-label>
               &nbsp; Leave Request
@@ -98,7 +110,7 @@
 
         <ion-menu-toggle auto-hide="false">
           <ion-item (click)="changepassword()" style="color: #fff;
-          background: #3d1a8a">
+          background: #133272">
              <ion-icon ios="ios-key" md="md-key"></ion-icon>
             <ion-label>
              &nbsp; Change Password
@@ -108,13 +120,13 @@
 
         <ion-menu-toggle auto-hide="false">
           <ion-item  (click)="logout()" style="color: #fff;
-            background: #3d1a8a">
+            background: #133272">
                <ion-icon ios="ios-log-out" md="md-log-out"></ion-icon>
               <ion-label>
                 &nbsp; Sign out
               </ion-label>
             </ion-item>
-        </ion-menu-toggle>
+        </ion-menu-toggle> -->
         </ion-list>
       </ion-content>
     </ion-menu>

@@ -126,75 +126,77 @@ export class HomePage {
 
 
   async presentAlertRequests() {
+var input=[];
+    
+    if(this.allowVacReq==-1 ){
+input.push({
+  name: 'Leave Request',
+  type: 'radio',
+  label: 'Leave Request',
+  value: 'value1',
+  handler: () => {
+   
+      alert("your not allowed to this action");
+    
+    alerts.dismiss();
+  }
+})
+    }
+    if (this.allowPunchReq == -1) {
+      input.push({ 
+        name: 'Manual Adjustment Request',
+        type: 'radio',
+        label: 'Manual Request',
+        value: 'value2',
+        handler: () => {
+         
+            this.navCtrl.navigateRoot('/manual-adjustment-request');
+        
+          alerts.dismiss();
+        }
+      })
+
+
+    }
+
+    if (this.allowExcReq == -1) {
+      input.push({
+        name: 'Execuse Request',
+        type: 'radio',
+        label: 'Execuse Request',
+        value: 'value3',
+        handler: () => {
+      
+            this.navCtrl.navigateRoot('/submit-execuse');
+          
+     
+          alerts.dismiss();
+        }
+      })
+
+
+    }
+
+    if (this.allowGeoPunch == -1) {
+      input.push({
+        name: 'Geo Punching',
+        type: 'radio',
+        label: 'Geo Punching',
+        value: 'value2',
+        handler: () => {
+        
+            this.navCtrl.navigateRoot('/geo-punching');
+          
+    
+          alerts.dismiss();
+        }
+      })
+
+
+    }
     const alerts = await this.alertController.create({
       header: 'Requests',
-      inputs: [
-        {
-          name: 'Leave Request',
-          type: 'radio',
-          label: 'Leave Request',
-          value: 'value1',
-          handler: () => {
-            if (this.allowVacReq == -1) {
-
-
-              this.navCtrl.navigateRoot('/submit-leave-resuest');
-            } else {
-              alert("your not allowed to this action");
-            }
-            alerts.dismiss();
-          }
-        },
-
-        {
-          name: 'Manual Adjustment Request',
-          type: 'radio',
-          label: 'Manual Request',
-          value: 'value2',
-          handler: () => {
-            if (this.allowPunchReq == -1) {
-              this.navCtrl.navigateRoot('/manual-adjustment-request');
-            }
-            else {
-              alert("your not allowed to this action");
-
-            }
-            alerts.dismiss();
-          }
-        },
-
-        {
-          name: 'Execuse Request',
-          type: 'radio',
-          label: 'Execuse Request',
-          value: 'value3',
-          handler: () => {
-            if (this.allowExcReq == -1) {
-              this.navCtrl.navigateRoot('/submit-execuse');
-            }
-            else {
-              alert("your not allowed to this action");
-            }
-            alerts.dismiss();
-          }
-        },
-        {
-          name: 'Geo Punching',
-          type: 'radio',
-          label: 'Geo Punching',
-          value: 'value2',
-          handler: () => {
-            if (this.allowGeoPunch == -1) {
-              this.navCtrl.navigateRoot('/geo-punching');
-            }
-            else {
-              alert("your not allowed to this action");
-
-            }
-            alerts.dismiss();
-          }
-        },
-      ],
+      inputs:input,
       buttons: [
         {
           text: 'Cancel',

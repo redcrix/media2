@@ -8,6 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AppSettings } from '../../config/globals';
 import { LoadingController } from '@ionic/angular';
 import { QRScanner, QRScannerStatus } from '@ionic-native/qr-scanner/ngx';
+
 @Component({
   selector: 'app-settings',
   templateUrl: './settings.page.html',
@@ -143,7 +144,8 @@ export class SettingsPage implements OnInit {
   }
 
   Back(){
-    this.navCtrl.navigateRoot('/login');
+
+    this.navCtrl.navigateRoot('/');
   }
   
 }

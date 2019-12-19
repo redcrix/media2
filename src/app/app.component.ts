@@ -40,6 +40,8 @@ export class AppComponent {
   allowVacReq:any;
   checkLogin_router;
   checkLogin_router2;
+  signUpBtn :boolean;
+
   CurrentEmp: EmployeeModel = { EMP_ID: "", DEPT_NAME: "", DEPT_ID: "", EMP_NAME: "", ORG_NAME: "", DOJ: "", floatDOJ: "", STATE: "" };
   constructor(
     public helper: Heplers,
@@ -65,20 +67,20 @@ export class AppComponent {
 
     this.checkLogin_router = JSON.parse(localStorage.getItem('checkLogin_router'));
 
+    if(AppSettings.IsLogedIn)
+    {
+      console.log('IsLogedIn');
+
+    this.signUpBtn = true;
+    } else{
+      this.signUpBtn = false;
+    } 
+
 
     if(this.checkLogin_router === 'null'){
       console.log('Nothing');
     }
-    // if(this.checkLogin_router === 1){
-    //   AppSettings.IsLogedIn=true;
-    //   console.log('everytimg');
-    //  this.checkacess();
-
-    //  this.navCtrl.navigateRoot('/login');
-     
-    // }
-
-   
+  
   
 //debugger;
 
@@ -150,45 +152,56 @@ export class AppComponent {
         icon: 'trending-up',
         pageName: 'request_status'
       }
-      // ,
-      // {
-      //   title: 'Geo Punching',
-      //   url: 'geo-punching',
-      //   direct: 'forward',
-      //   icon: 'map',
-      //   pageName: 'geo_punching'
-      // },
-      // {
-      //   title: 'Execuse Request',
-      //   url: 'submit-execuse',
-      //   direct: 'forward',
-      //   icon: 'calendar',
-      //   pageName: 'execuse_request'
-      // }
-      // ,
-      // {
-      //   title: 'Manual Adjustment Request',
-      //   url: 'manual-adjustment-request',
-      //   direct: 'forward',
-      //   icon: 'clock',
-      //   pageName: 'manual_adjustment_request'
-      // }
-      // ,
-      // {
-      //   title: 'Leave Request',
-      //   url: 'submit-leave-resuest',
-      //   direct: 'forward',
-      //   icon: 'paper',
-      //   pageName: 'leave_request'
-      // }
-      // ,
-      // {
-      //   title: 'Change Password',
-      //   url: 'change-password',
-      //   direct: 'forward',
-      //   icon: 'key',
-      //   pageName: 'change_password'
-      // }
+      ,
+      {
+        title: 'Geo Punching',
+        url: 'geo-punching',
+        direct: 'forward',
+        icon: 'map',
+        pageName: 'geo_punching'
+      },
+
+      {
+        title: 'Execuse Request',
+        url: 'submit-execuse',
+        direct: 'forward',
+        icon: 'calendar',
+        pageName: 'execuse_request'
+      }
+      ,
+      {
+        title: 'Manual Adjustment Request',
+        url: 'manual-adjustment-request',
+        direct: 'forward',
+        icon: 'clock',
+        pageName: 'manual_adjustment_request'
+      }
+      ,
+      {
+        title: 'Leave Request',
+        url: 'submit-leave-resuest',
+        direct: 'forward',
+        icon: 'paper',
+        pageName: 'leave_request'
+      }
+      ,
+      {
+        title: 'Change Password',
+        url: 'change-password',
+        direct: 'forward',
+        icon: 'key',
+        pageName: 'change_password'
+      },
+
+      
+      {
+        title: 'Sign Out',
+        url: 'login',
+        direct: 'forward',
+        icon: 'key',
+        pageName: 'signOut'
+      }
+
     ];
     // platform.ready().then(() => {
 
@@ -243,6 +256,7 @@ export class AppComponent {
         console.log(res);
       
     if(res == -1){
+
       this.navCtrl.navigateRoot('/geo-punching');
       }
       else{
@@ -374,6 +388,9 @@ export class AppComponent {
     });
 
 
+   
+
+
 
     if(this.checkLogin_router === 1 || this.checkLogin_router2 ===1){
      
@@ -412,12 +429,59 @@ export class AppComponent {
   }
   goToPage(PageName: string) {
 
-    if(AppSettings.IsLogedIn)
+    console.log(1);
+    
+  let TempV = false;
+
+    if(PageName === 'signOut')
     {
+
+      TempV = true;
+      this.logout();
+    }
+
+    if(PageName === 'geo-punching')
+    {
+
+      TempV = true;
+      this.testreqGeoPunch();
+    }
+
+    if(PageName === 'submit-execuse')
+    {
+      TempV = true;
+
+      this.testreqExcReq();
+    }
+
+    if(PageName === 'manual-adjustment-request')
+    {
+
+      TempV = true;
+      this.testreqPunchReq();
+    }
+
+    if(PageName === 'submit-leave-resuest')
+    {
+
+      TempV = true;
+      this.testreqVacReq();
+    }
+
+    
+
+    if(AppSettings.IsLogedIn &&  TempV == false)
+    {
+      console.log(2);
+      
       this.navCtrl.navigateRoot(PageName);
     }
-    else
+
+
+    if(!AppSettings.IsLogedIn)
     {
+
+      console.log(4);
       this.navCtrl.navigateRoot('login');
     }
     

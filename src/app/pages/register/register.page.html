@@ -1,22 +1,33 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar color="primary" class="animated fadeIn">
-    <ion-buttons slot="start" (click)="Back()">
-      <ion-icon ios="ios-arrow-back" md="md-arrow-back" class="backIcon"></ion-icon>
-    </ion-buttons>
+
 
 
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 <ion-content class="content">
 
+
+
+
     <div class="bgnd2" style="height:100%">
+
+        <ion-buttons slot="start" (click)="Back()">
+            <ion-icon ios="ios-arrow-back" md="md-arrow-back" class="backIcon"></ion-icon>
+          </ion-buttons>
+          
     <br><br><br>
     <div class="logo" style="height: 180px;margin: auto;text-align: center;">
-      <img src="assets/img/ionbooking-ico.png">
+      <img src="../../../assets/img/logo_white.png" class="Logo_">
+      <!-- <img src="assets/img/ionbooking-ico.png"> -->
     </div>
-    <div padding-horizontal text-center class="animated fadeInDown">
-      <form >
-        <ion-item style="margin-bottom: 10px;" no-padding class="inputstyle animated fadeInUp">
+
+    <div class="w100">
+    <div text-center class="animated fadeInDown">
+      <form  class="list-form ">
+
+        <div class="inner_content">
+        <ion-item style="margin-bottom: 10px;" no-padding class="inputstyle animated fadeInUp" >
           <ion-label class="wcLabel">
             <h3>
               <ion-icon name="mail" item-start></ion-icon>
@@ -30,7 +41,7 @@
               <ion-icon name="lock" item-start></ion-icon>
             </h3>
           </ion-label>
-          <ion-input placeholder="password" type="password" [(ngModel)]="usr.emp_pwd" name="usr.emp_pwd"></ion-input>
+          <ion-input placeholder="Password" type="password" [(ngModel)]="usr.emp_pwd" name="usr.emp_pwd"></ion-input>
         </ion-item>
         <ion-item style="margin-bottom: 10px;" no-padding class="inputstyle animated fadeInUp">
           <ion-label class="wcLabel">
@@ -40,13 +51,24 @@
           </ion-label>
           <ion-input placeholder="Confirm password" type="password" [(ngModel)]="passwordConfirm" name="passwordConfirm"></ion-input>
         </ion-item>
-        <ion-button class="btnstyle2" full (click)="signUp()" icon-left size="medium" expand="full" color="dark"
+
+      </div>
+
+        <button class="btnstyle2" full (click)="signUp()" icon-left size="medium" expand="full" color="dark"
           >
-          <ion-ripple-effect></ion-ripple-effect>
+          <!-- <ion-ripple-effect></ion-ripple-effect> -->
           <ion-icon style="color:white" name="paper"></ion-icon>
           Submit
-        </ion-button>
+        </button>
       </form>
+    </div>
+
+    </div>
+
+    <div class="Box_">
+
+    <a  (click)="goToSettings()" class="Settingslink">Server Settings</a>
+
     </div>
 
   </div>

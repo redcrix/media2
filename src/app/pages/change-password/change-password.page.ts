@@ -16,6 +16,7 @@ export class ChangePasswordPage implements OnInit {
   OldPassword: string;
   NewPassword: string;
   ConfirmPassword: string;
+  empID : string;
 
   constructor(    public Myconfig: config,public storage: Storage,public usrService: UserService, public helper: Heplers, public navCtrl: NavController) {
   }
@@ -25,7 +26,7 @@ export class ChangePasswordPage implements OnInit {
       this.helper.showMessage("Passwords dose not matched", "Error")
     }
     else {
-      this.usrService.ChangePassword(this.OldPassword, this.NewPassword).subscribe((res: any) => {
+      this.usrService.ChangePassword(this.OldPassword, this.NewPassword, this.empID).subscribe((res: any) => {
 
         console.log(JSON.stringify(res));
         if (res.code == 0) {
@@ -68,5 +69,10 @@ export class ChangePasswordPage implements OnInit {
 
   ngOnInit() {
   }
+
+  Back(){
+    this.navCtrl.navigateRoot('/login');
+  }
+
 
 }

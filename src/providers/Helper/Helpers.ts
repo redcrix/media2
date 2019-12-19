@@ -78,6 +78,30 @@ export class Heplers {
     }
 
     HasPermission(PageName: string) {
+
+
+        if (PageName == "geo_punching" && AppSettings.AllowGeoPunch == "0") {
+            // alert('HELPER'+AppSettings.permissions.AllowGeoPunch);
+
+            
+            return false;
+        } 
+        
+        if (PageName == "execuse_request" && AppSettings.permissions.AllowExcReq == "0") {
+            return false;
+        }
+        if (PageName == "leave_request" && AppSettings.permissions.AllowVacReq == "0") {
+            return false;
+        }
+        if (PageName == "manual_adjustment_request" && AppSettings.permissions.AllowPunchReq == "0") {
+            return false;
+        }
+
+
+
+
+
+
         if (!AppSettings.IsLogedIn) {
             return false;
         }
@@ -85,7 +109,10 @@ export class Heplers {
             return true
         }
         else {
-            if (PageName == "geo_punching" && AppSettings.permissions.AllowGeoPunch == "-1") {
+            if (PageName == "geo_punching" && AppSettings.AllowGeoPunch == "-1") {
+                // alert('HELPER'+AppSettings.permissions.AllowGeoPunch);
+
+                
                 return true;
             }
             if (PageName == "execuse_request" && AppSettings.permissions.AllowExcReq == "-1") {

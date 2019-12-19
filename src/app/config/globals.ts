@@ -13,6 +13,8 @@ export class AppSettings {
     public static ServerDateFormat='';
     public static ServerTimeFormat='';
     public static IsLogedIn=false;
+    public static AllowGeoPunch='';
+    
     public static permissions:AccessRightsModel={AllowExcReq:"",AllowGeoPunch:"",AllowPunchReq:"",AllowVacReq:"",MARID:"",MARName:"",Status:""};
     
     

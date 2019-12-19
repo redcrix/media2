@@ -204,8 +204,12 @@ export class LoginPage implements OnInit {
         this.usrSer.GetRightAccess(empId, config.APIKEY,
           this.tokenReponse.result).subscribe((res: any) => {
 
+     
             AppSettings.permissions = res.result as AccessRightsModel
             //debugger;
+
+            AppSettings.AllowGeoPunch = res.result.AllowGeoPunch;
+
             // console.log(res.result);
             this.storage.set('allowExcReq', res.result.AllowExcReq);
             this.storage.set('allowGeoPunch', res.result.AllowGeoPunch);
@@ -241,7 +245,7 @@ export class LoginPage implements OnInit {
 
         // this.uniqueDeviceID.get()
         // .then(data => {
-          this.usrSer.Login('4cc506b3-2a33-4f6a-98de-700f36438594', this.account.empId, this.account.password)
+          this.usrSer.Login('4cc506b3-2a33-4f6a-98de-700f36438597', this.account.empId, this.account.password)
           .subscribe((res: any) => {
 
             let showErr = res.result;
@@ -293,7 +297,7 @@ export class LoginPage implements OnInit {
   }
 
   goToForgotPassword() {
-    // this.navCtrl.navigateRoot('/forgotPassword');
+    this.navCtrl.navigateRoot('/change-password');
   }
   ngOnInit() {
     // document.querySelector('video').play();
@@ -317,6 +321,10 @@ export class LoginPage implements OnInit {
       //  alert("are");
       navigator['app'].exitApp();
     });
+  }
+
+  goToSettings(){
+    this.navCtrl.navigateRoot('/settings');
   }
 
 }
