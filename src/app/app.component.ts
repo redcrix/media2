@@ -85,15 +85,15 @@ export class AppComponent {
 //debugger;
 
     this.appPages = [
-      {
-        title: 'Dashboard',
-        url: 'Dashboard',
-        direct: 'root',
-        icon: 'speedometer',
-        pageName: 'dashboard'
+      // {
+      //   title: 'Dashboard',
+      //   url: 'Dashboard',
+      //   direct: 'root',
+      //   icon: 'speedometer',
+      //   pageName: 'dashboard'
       
-      }
-      ,
+      // }
+      // ,
       {
         title: 'Home',
         url: 'home',

@@ -153,7 +153,10 @@ export class DashboardPage implements OnInit {
 
 
   GetTimeTable() {
-    this.TTSerivce.GetTimeTableList("2019-01-11", "2019-01-18").subscribe(res =>
+
+
+    
+    this.TTSerivce.GetTimeTableList(this.helper.GetOldDate(), this.helper.GetCurrentDate()).subscribe(res =>
       { 
         console.log("GetTimeTableList",res);
         this.MapTTListTable(res);

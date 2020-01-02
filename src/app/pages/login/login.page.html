@@ -1,19 +1,18 @@
 <!-- chrome://inspect/#devices -->
-<ion-content >
+<ion-content  [scrollY]="false" >
   <div class="bgnd2" style="height:100%">
-    <br><br><br><br>
-          <div class="logo" style="height: 200px;margin: auto;margin-top: 15px;text-align: center;">
-              <img src="../../../assets/img/logo_white.png" class="Logo_">
-            </div>
+    <div class="logo" style="height: 200px;margin: auto; text-align: center;">
+      <img src="../../../assets/img/logo_white.png" class="Logo_">
+    </div>
     <div class="w100">
       <div padding-horizontal text-center class="animated fadeInDown">
         <h4 no-margin>
           <ion-text color="light">
          </ion-text>
         </h4>
-        <form  class="list-form ">
+        <form  class="list-form">
 
-          <div class="inner_content">
+          <div class="inner_content_X ">
           <ion-item style="margin-bottom: 10px;" no-padding class="inputstyle animated fadeInUp">
             <ion-label class="wcLabel">
               <p>
@@ -39,19 +38,14 @@
             <ion-grid>
               <ion-row>
                 <ion-col col-12>
-                  <!-- <ion-button expand="full" full type="submit" icon-left size="medium" expand="" shape="round" color="dark" tappable> -->
                   <button expand="full" full type="submit" icon-left size="medium" expand="full" class="btnstyle2"
                     color="dark" (click)="doLogin()" >
-                    <!-- <ion-icon name="log-in"></ion-icon> -->
-                    Login
+                   Login
                   </button>
                 </ion-col>
 
               </ion-row>
-              <!-- <ion-row style="text-align: right; -->
-              <!-- margin-top: 10px;"> -->
-           
-              <!-- </ion-row> -->
+         
             </ion-grid>
           </div>
         </form>
@@ -59,14 +53,19 @@
     </div>
 
 
-      <!-- <a  (click)="goToForgotPassword()" class="Settingslink">Forgot Password</a> -->
-
-      <div class="Box_">
-        <a  (click)="goToRegister()" class="registerlink">Register New Employee</a>
-      </div>
+      <!-- <div class="Box_X">
+    
+      </div> -->
    
 
 </div>
 </ion-content>
+
+
+<ion-footer>
+    <ion-toolbar  color="primary">
+        <a  (click)="goToRegister()" class="registerlink">Register New Employee</a>
+    </ion-toolbar>
+  </ion-footer>
 
 

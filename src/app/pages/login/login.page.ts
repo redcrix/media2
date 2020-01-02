@@ -242,10 +242,10 @@ export class LoginPage implements OnInit {
       ////debugger;
       this.presentLoading();
       if (this.account.empId != undefined || this.account.empId != "") {
-
+        // '4cc506b3-2a33-4f6a-98de-700f36438597'
         // this.uniqueDeviceID.get()
         // .then(data => {
-          this.usrSer.Login('4cc506b3-2a33-4f6a-98de-700f36438597', this.account.empId, this.account.password)
+          this.usrSer.Login('4cc506b3-2a33-4f6a-98de-700f36438599', this.account.empId, this.account.password)
           .subscribe((res: any) => {
 
             let showErr = res.result;
@@ -265,10 +265,10 @@ export class LoginPage implements OnInit {
              this.helper.showMessage(showErr, 'Error');
 
             }
-          // });
+          });
 
       
-        });
+        // });
 
 
       }

@@ -11,6 +11,7 @@ import { DateComponent } from '../../../models/DateComponent';
 import { UserService } from '../../../Services/UserService';
 import { AccessRightsModel } from '../../../models/AccessRightsModel';
 import { Storage } from '@ionic/storage';
+import { config } from '../../../providers/Config';
 
 
 @Component({
@@ -67,6 +68,7 @@ export class HomePage {
   allowPunchReq: any
   allowVacReq: any;
   constructor(
+    public Myconfig: config,
     public storage: Storage,
     public usrSer: UserService,
     public navCtrl: NavController,
@@ -348,24 +350,28 @@ input.push({
   }
 
   logout() {
+
+    this.storage.remove(this.Myconfig.Username_Key);  
     this.storage.remove('checkLogin_router');  
-    this.storage.remove('ConnPar'); 
+    
+    
+    this.storage.remove('ConnPar');  
     this.storage.remove('TestOne');  
     this.storage.remove('nameOne');  
     this.storage.remove('nameTwo');  
     this.storage.remove('nameThree');  
     this.storage.remove('empId');  
     this.storage.remove('ApiToken');  
-
-
     localStorage.removeItem('checkLogin_router');
-    AppSettings.IsLogedIn = false;
     localStorage.removeItem('empId');
     localStorage.removeItem('ApiToken');
     localStorage.removeItem('nameOne');
     localStorage.removeItem('nameTwo');
     localStorage.removeItem('nameThree');
-    this.navCtrl.navigateRoot('login');
+    AppSettings.IsLogedIn=false;
+    this.navCtrl.navigateRoot('login',false, {replaceUrl: true});
+
+    
 
   }
 

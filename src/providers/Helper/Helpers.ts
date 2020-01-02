@@ -447,7 +447,7 @@ export class Heplers {
         let rminutes = Math.round(minutes);
         // console.log('ww_string');
         if (Mins > 0) {
-            console.log(rhours.toString() + ":" + this.decPipe.transform(rminutes.toString(), "2.0-0"));
+            // console.log(rhours.toString() + ":" + this.decPipe.transform(rminutes.toString(), "2.0-0"));
             return this.decPipe.transform(rhours.toString(), "2.0-0") + ":" + this.decPipe.transform(rminutes.toString(), "2.0-0");
         }
         return '-';

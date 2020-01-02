@@ -145,7 +145,7 @@ export class SettingsPage implements OnInit {
 
   Back(){
 
-    this.navCtrl.navigateRoot('/');
+    this.navCtrl.navigateRoot('/login');
   }
   
 }

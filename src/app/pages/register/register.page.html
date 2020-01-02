@@ -1,23 +1,20 @@
 <!-- <ion-header>
-  <ion-toolbar color="primary" class="animated fadeIn">
-
-
+  <ion-toolbar color="primary">
+ 
 
   </ion-toolbar>
 </ion-header> -->
-<ion-content class="content">
+<ion-content  [scrollY]="false">
 
 
 
 
     <div class="bgnd2" style="height:100%">
-
-        <ion-buttons slot="start" (click)="Back()">
+        <ion-buttons  (click)="Back()">
             <ion-icon ios="ios-arrow-back" md="md-arrow-back" class="backIcon"></ion-icon>
           </ion-buttons>
-          
-    <br><br><br>
-    <div class="logo" style="height: 180px;margin: auto;text-align: center;">
+  
+    <div class="logo" style="margin: auto;text-align: center;">
       <img src="../../../assets/img/logo_white.png" class="Logo_">
       <!-- <img src="assets/img/ionbooking-ico.png"> -->
     </div>
@@ -26,7 +23,7 @@
     <div text-center class="animated fadeInDown">
       <form  class="list-form ">
 
-        <div class="inner_content">
+        <div class="inner_content_X">
         <ion-item style="margin-bottom: 10px;" no-padding class="inputstyle animated fadeInUp" >
           <ion-label class="wcLabel">
             <h3>
@@ -65,11 +62,13 @@
 
     </div>
 
-    <div class="Box_">
-
-    <a  (click)="goToSettings()" class="Settingslink">Server Settings</a>
-
-    </div>
 
   </div>
 </ion-content>
+
+
+<ion-footer>
+    <ion-toolbar color="primary">
+        <a  (click)="goToSettings()" class="Settingslink">Server Settings</a>
+    </ion-toolbar>
+  </ion-footer>
