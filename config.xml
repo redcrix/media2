@@ -53,7 +53,7 @@
             <string>This App request your permission To Automatically get your Location and Punch In / Out on the right Site / Office</string>
         </config-file>
         <edit-config file="*-Info.plist" mode="merge" target="NSLocationWhenInUseUsageDescription">
-            <string>We use your location for full functionality of certain app features.</string>
+            <string>In order to punch-in your attendance to the exact site, allow IVisionMT to access your location.</string>
         </edit-config>
         <icon height="57" src="resources/ios/icon/icon.png" width="57" />
         <icon height="114" src="resources/ios/icon/icon@2x.png" width="114" />
